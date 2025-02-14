@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Enlaces -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap">
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="images/fav.png" type="image/x-icon">
+    <title>Portafolio | Pablo Mian</title>
+    <style>
+        /* Estilos generales */
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #1e3c72, #2a5298);
+            color: #fff;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Hero Section */
+        .featured-box {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 100px 0;
+        }
+
+        .featured-text {
+            max-width: 600px;
+        }
+
+        .featured-text-card {
+            font-size: 18px;
+            color: #ff6f61;
+            font-weight: 600;
+        }
+
+        .featured-name {
+            font-size: 48px;
+            font-weight: 600;
+            margin: 20px 0;
+        }
+
+        .featured-name span {
+            color: #fff; /* Color blanco para "Soy" */
+        }
+
+        .featured-text-info {
+            font-size: 18px;
+            color: #ddd;
+            margin-bottom: 30px;
+        }
+
+        .social_icons {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .social_icons .icon {
+            font-size: 24px;
+            color: #ff6f61;
+            transition: color 0.3s ease;
+        }
+
+        .social_icons .icon:hover {
+            color: #e65a50;
+        }
+
+        .featured-image img {
+            border-radius: 50%;
+            width: 300px;
+            height: 300px;
+            object-fit: cover;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        /* About Section */
+        .section {
+            padding: 80px 0;
+        }
+
+        .top-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .top-header h1 {
+            font-size: 36px;
+            font-weight: 600;
+            color: #ff6f61;
+        }
+
+        .row {
+            display: flex;
+            gap: 40px;
+        }
+
+        .col {
+            flex: 1;
+        }
+
+        .about-info h3 {
+            font-size: 24px;
+            font-weight: 600;
+            margin-bottom: 20px;
+            color: #ff6f61;
+        }
+
+        .about-info p {
+            font-size: 16px;
+            color: black;
+            line-height: 1.8;
+        }
+
+        .about-info ul {
+            list-style-type: disc;
+            padding-left: 20px;
+            color: black;
+        }
+
+        .skills-box {
+            background-color: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+
+        .skills-header h3 {
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 15px;
+            color: #ff6f61;
+        }
+
+        .skills-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .skills-list span {
+            background-color: #ff6f61;
+            color: #fff;
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+
+        /* Projects Section */
+        .project-details {
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+        }
+
+        .project-item {
+            background-color: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .project-item h3 {
+            font-size: 24px;
+            font-weight: 600;
+            color: #ff6f61;
+            margin-bottom: 20px;
+        }
+
+        .project-item p {
+            font-size: 16px;
+            color: #ddd;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .project-item ul {
+            list-style-type: disc;
+            padding-left: 20px;
+            color: #ddd;
+            margin-bottom: 20px;
+        }
+
+        .project-item ul li {
+            margin-bottom: 10px;
+        }
+
+        .swiper {
+            width: 100%;
+            height: 400px;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .swiper-slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain; /* Ajuste para que las imágenes no tengan zoom */
+            background-color: #000; /* Fondo negro para imágenes no cuadradas */
+        }
+
+        /* Footer */
+        footer {
+            background-color: rgba(0, 0, 0, 0.2);
+            text-align: center;
+            padding: 40px 0;
+            margin-top: 80px;
+        }
+
+        .footer-contact-info {
+            margin-bottom: 20px;
+        }
+
+        .footer-contact-info p {
+            font-size: 16px;
+            color: #ddd;
+            margin: 5px 0;
+        }
+
+        .footer-social-icons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin: 20px 0;
+        }
+
+        .footer-social-icons .icon {
+            font-size: 24px;
+            color: #fff; /* Color blanco para los íconos */
+            transition: color 0.3s ease;
+        }
+
+        .footer-social-icons .icon:hover {
+            color: #ff6f61; /* Color coral al hacer hover */
+        }
+
+        .bottom-footer {
+            font-size: 14px;
+            color: #ddd;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Hero Section -->
+        <section class="featured-box" id="home">
+            <div class="featured-text">
+                <div class="featured-text-card">Juan Pablo Och Mian</div>
+                <div class="featured-name">
+                    <p><span>Soy</span> <span class="typedText"></span></p>
+                </div>
+                <div class="featured-text-info">
+                    <p>Desarrollador de software con experiencia en diseño, desarrollo e implementación de soluciones tecnológicas. Apasionado por crear aplicaciones eficientes y escalables.</p>
+                </div>
+                
+                <div class="social_icons">
+                    <div class="icon"><i class="uil uil-instagram"></i></div>
+                    <div class="icon"><i class="uil uil-linkedin-alt"></i></div>
+                    <div class="icon"><i class="uil uil-github-alt"></i></div>
+                </div>
+            </div>
+            <div class="featured-image">
+                <img src="images/perfil.jpg" alt="Pablo Mian">
+            </div>
+        </section>
+
+        <!-- Sobre Mí -->
+        <section class="section" id="about">
+            <div class="top-header">
+                <h1>Sobre Mí</h1>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <div class="about-info">
+                        <h3>Mi experiencia</h3>
+                        <p>Con conocimientos sólidos en desarrollo de software, he trabajado en proyectos que involucran diseño de bases de datos, desarrollo de APIs y creación de interfaces de usuario intuitivas. Mi enfoque se centra en la calidad del código y la eficiencia de las soluciones.</p>
+                        <p>Actualmente, cuento con experiencia en tecnologías como:</p>
+                        <ul>
+                            <li>Desarrollo frontend con HTML, CSS, JavaScript y frameworks como React.</li>
+                            <li>Desarrollo backend con Node.js, Express y bases de datos como MySQL.</li>
+                            <li>Gestión de proyectos utilizando metodologías ágiles como Scrum.</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="skills-box">
+                        <div class="skills-header">
+                            <h3>Habilidades Técnicas</h3>
+                        </div>
+                        <div class="skills-list">
+                            <span>HTML</span>
+                            <span>CSS</span>
+                            <span>JavaScript</span>
+                            <span>React</span>
+                            <span>Node.js</span>
+                            <span>Express</span>
+                            <span>MySQL</span>
+                            <span>Git</span>
+                            <span>Scrum</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Proyectos -->
+        <section class="section" id="projects">
+            <div class="top-header">
+                <h1>Proyectos</h1>
+            </div>
+            <div class="project-details">
+                <!-- Proyecto 1: DELUXE TOURS -->
+                <div class="project-item">
+                    <h3>DELUXE TOURS</h3>
+                    <p>En este proyecto colaborativo, mi rol principal fue el desarrollo del backend y la implementación de servicios. Me encargué de levantar servicios para gestionar reservas, autenticación de usuarios y la integración con bases de datos.</p>
+                    <ul>
+                        <li><strong>Tecnologías utilizadas:</strong> Node.js, Express, MySQL.</li>
+                        <li><strong>Contribuciones:</strong> Desarrollo de APIs, integración con la base de datos, implementación de autenticación y autorización.</li>
+                    </ul>
+                    <div class="swiper">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <img src="images/deluxe1.jpg" alt="DELUXE TOURS 1">
+                            </div>
+                            <div class="swiper-slide">
+                                <img src="images/deluxe2.jpg" alt="DELUXE TOURS 2">
+                            </div>
+                            <div class="swiper-slide">
+                                <img src="images/deluxe3.jpg" alt="DELUXE TOURS 3">
+                            </div>
+                        </div>
+                        <div class="swiper-pagination"></div>
+                    </div>
+                </div>
+
+                <!-- Proyecto 2: PROYECTECA -->
+                <div class="project-item">
+                    <h3>PROYECTECA</h3>
+                    <p>En este proyecto, mi trabajo se enfocó tanto en el frontend como en el backend. Desarrollé interfaces de usuario interactivas y me encargué de la lógica del servidor, incluyendo la gestión de proyectos y la colaboración en tiempo real.</p>
+                    <ul>
+                        <li><strong>Tecnologías utilizadas:</strong> React, Node.js, Express, MySQL.</li>
+                        <li><strong>Contribuciones:</strong> Desarrollo del backend, modelado de la base de datos, creación de APIs para la gestión de proyectos y colaboración.</li>
+                    </ul>
+                    <div class="swiper">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <img src="images/proyecteca1.jpg" alt="PROYECTECA 1">
+                            </div>
+                            <div class="swiper-slide">
+                                <img src="images/proyecteca2.jpg" alt="PROYECTECA 2">
+                            </div>
+                            <div class="swiper-slide">
+                                <img src="images/proyecteca3.jpg" alt="PROYECTECA 3">
+                            </div>
+                            <div class="swiper-slide">
+                                <img src="images/proyecteca4.jpg" alt="PROYECTECA 3">
+                            </div>
+                        </div>
+                        <div class="swiper-pagination"></div>
+                    </div>
+                </div>
+
+                <!-- Proyecto 3: MANTENIMIENTO PEE -->
+                <div class="project-item">
+                    <h3>MANTENIMIENTO PEE</h3>
+                    <p>En este proyecto, mi rol fue principalmente en el backend. Una de mis tareas clave fue implementar una función de inserción masiva en la tabla Enterprise, optimizando el proceso de carga de datos.</p>
+                    <ul>
+                        <li><strong>Tecnologías utilizadas:</strong> PHP, MySQL.</li>
+                        <li><strong>Contribuciones:</strong> Implementación de la función de inserción masiva, optimización de consultas SQL, mejora del rendimiento del sistema.</li>
+                    </ul>
+                    <div class="swiper">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <img src="images/mnto1.jpg" alt="MANTENIMIENTO PEE 1">
+                            </div>
+                            <div class="swiper-slide">
+                                <img src="images/mnto2.jpg" alt="MANTENIMIENTO PEE 2">
+                            </div>
+                            <div class="swiper-slide">
+                                <img src="images/mnto3.jpg" alt="MANTENIMIENTO PEE 3">
+                            </div>
+                            <div class="swiper-slide">
+                                <img src="images/mnto4.jpg" alt="MANTENIMIENTO PEE 3">
+                            </div>
+                        </div>
+                        <div class="swiper-pagination"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-contact-info">
+            <h2>Contacto</h2>
+            <p><i class="uil uil-envelope"></i> Email: pablo.mian15@gmail.com</p>
+            <p><i class="uil uil-phone"></i> Tel: +123 456 7890</p>
+            <p><i class="uil uil-map-marker"></i> Ubicación: Cancún, México</p>
+        </div>
+        <div class="footer-social-icons">
+            <div class="icon"><a href="https://github.com/PabloMian" target="_blank"><i class="uil uil-github-alt"></i></a></div>
+            <div class="icon"><a href="https://instagram.com/tuusuario" target="_blank"><i class="uil uil-instagram"></i></a></div>
+            <div class="icon"><a href="https://linkedin.com/in/tuusuario" target="_blank"><i class="uil uil-linkedin-alt"></i></a></div>
+        </div>
+        <div class="bottom-footer">
+            <p>© 2025 Pablo Mian.</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+    <script>
+        // Efecto de escritura automática
+        const typed = new Typed('.typedText', {
+            strings: ['Desarrollador de Software', 'Especialista en Frontend', 'Apasionado por la Tecnología'],
+            typeSpeed: 100,
+            backSpeed: 50,
+            loop: true
+        });
+
+        // Inicializar Swiper para los carruseles
+        const swiper = new Swiper('.swiper', {
+            loop: true,
+            autoplay: {
+                delay: 8000, // Cambia de imagen cada 3 segundos
+                disableOnInteraction: false,
+            },
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+        });
+    </script>
+</body>
+</html>
